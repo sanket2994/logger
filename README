@@ -1,0 +1,30 @@
+This is a git repository for  generic logger in c .
+
+The logger contains the following :
+	1. It contains 4 log levels :
+			a. LOG_EMERG 
+			b. LOG_CRITICAL
+			c. LOG_INFO
+			d. LOG_DEBUG
+	  The log levels are in the decreasing order with EMERG being the highest level.
+	  the log level prints all the logs of the levels above it .
+	  i.e if log level is INFO it will print all the info , critical and emerg logs.
+	  whereas if the level is emerg it will only print emerg logs.
+	  debug level will print logs of all levels.
+
+	2. Time stamp as a optional feild.
+	   if the program is compiled with flag TIME_STAMP then time stamp will be printed .
+	   we need to define this flag in Makefile.
+	
+The logger has a global structure g_log using which we need to set the log level and time stamp.
+
+you can write your program in the app file with file name main.c
+then just do make.
+a build folder will be created in which you will find the executable just run it .
+
+to clean all the object files and main executable file just run make clean
+
+
+
+Do let me know if any problems with logger 
+
