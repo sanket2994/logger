@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdint.h>
-#define TIME_STAMP
 #define PRINT_TIME 1
 #define NO_PRINT_TIME 2
 #define LOG_FILE "/var/log/app_log.log"

@@ -1,9 +1,8 @@
 CC     = gcc
-CFLAGS = -c -g -Iinc/
+CFLAGS = -c -g -Iinc/ -DTIME_STAMP
 APP_PATH = app/
 SRC_PATH = src/
 BUILD_DIR = build/
-
 all : main
 
 main.o : $(APP_PATH)main.c
