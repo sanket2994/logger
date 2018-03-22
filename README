@@ -18,12 +18,16 @@ The logger contains the following :
 	
 The logger has a global structure g_log using which we need to set the log level and time stamp.
 
-you can write your program in the app file with file name main.c
+you can write your sample program to test the logger in the app directory with file name main.c
 then just do make.
+
+	$ sudo make
+
 a build folder will be created in which you will find the executable just run it .
+	
 
 to clean all the object files and main executable file just run make clean
-
+	$ sudo make clean
 
 
 Do let me know if any problems with logger 
