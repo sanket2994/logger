@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "../inc/log.h"
+#include "log.h"
 
 
 static void print_level(FILE *fp, uint8_t log_lev)
@@ -24,7 +24,7 @@ static void print_level(FILE *fp, uint8_t log_lev)
 }
 void print_log(uint8_t log_lev, FILE *fp,  const char *fmt, ...)
 {
-	FILE *fptr;
+	FILE *fptr = NULL;
 	va_list list;
 	if(fp == NULL)
 		fptr = fopen("/var/log/app_log.log", "a+");

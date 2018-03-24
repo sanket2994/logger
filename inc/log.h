@@ -10,7 +10,7 @@
 #define LOG_FILE "/var/log/app_log.log"
 void print_log(uint8_t log_lev, FILE *fp,  const char *fmt, ...);
 
-#define APP_LOG(LOG_LEVEL, file_fp, fmt, ...) print_log(LOG_LEVEL, file_fp, fmt, __VA_ARGS__)
+#define APP_LOG(LOG_LEVEL, file_fp, fmt, ...) print_log(LOG_LEVEL, file_fp, fmt, ##__VA_ARGS__ )
 
 typedef struct log{
 	uint8_t log_level;
@@ -20,6 +20,8 @@ typedef struct log{
 }log_t;
 
 log_t g_log;
+
+
 typedef enum log_level{
 	LOG_EMERG 	= 0,
 	LOG_CRITICAL 	= 1,
