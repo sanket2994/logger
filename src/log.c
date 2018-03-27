@@ -2,23 +2,35 @@
 #include <stdlib.h>
 #include <time.h>
 #include "log.h"
-
+#include "color.h"
 
 static void print_level(FILE *fp, uint8_t log_lev)
 {
 	switch(log_lev)
 	{
 		case LOG_EMERG :
-			fprintf(fp, "<LOG_EMERG> \t");
+			if(fp == stderr)
+				fprintf(fp, RED_TEXT("<LOG_EMERG> \t"));
+			else		
+				fprintf(fp, "<LOG_EMERG> \t");
 			break;
 		case LOG_CRITICAL :
-			fprintf(fp, "<LOG_CRITICAL>\t");
+			if(fp == stderr)
+				fprintf(fp, YELLOW_TEXT("<LOG_CRITICAL>\t"));
+			else 
+				fprintf(fp , "<LOG_CRITICAL>\t");
 			break;
 		case LOG_INFO :
-			fprintf(fp, "<LOG_INFO> \t");
+			if(fp == stderr)
+				fprintf(fp, BLUE_TEXT("<LOG_INFO> \t"));
+			else
+				fprintf(fp, "<LOG_INFO>\t");
 			break;
 		case LOG_DEBUG :
-			fprintf(fp, "<LOG_DEBUG> \t");
+			if(fp == stderr)
+				fprintf(fp, GREEN_TEXT("<LOG_DEBUG> \t"));
+			else
+				fprintf(fp, "<LOG_DEBUG>\t");
 			break;
 	}
 }
